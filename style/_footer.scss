@@ -1,0 +1,128 @@
+@use 'variables' as *;
+
+footer {
+    background-color: $Blue-950;
+
+    max-width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+
+    div.block1 {
+        display: flex;
+        justify-content: flex-start;
+        gap: 7rem;
+
+        div.logo-social {
+
+            img {
+                margin-bottom: 3.5rem;
+            }
+
+            ul.social-links {
+                display: flex;
+                gap: 1rem;
+                li {
+                    list-style: none;
+                }
+            }
+        }
+
+        div.links-block1 {
+            ul.links1 {
+                li {
+                    list-style: none;
+                    &:not(:last-child) {
+                        margin-bottom: 1.5rem;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: $White;
+                        font-weight: 300;
+                        transition: 0.3s ease;
+                        &:hover {
+                            color: $Green-500;
+                        }
+                    }
+                }
+            }
+        }
+
+                div.links-block2 {
+            ul.links2 {
+                li {
+                    list-style: none;
+                    &:not(:last-child) {
+                        margin-bottom: 1.5rem;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: $White;
+                        font-weight: 300;
+                        transition: 0.3s ease;
+                        &:hover {
+                            color: $Green-500;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    div.block2 {
+        div.invite-copyright{
+            button { /* invite button style */
+            border: none;
+            position: relative;
+            background: linear-gradient(45deg, $Cyan-400 0%, $Green-500 100%);
+            padding: 15px 30px;
+            border-radius: 50px;
+            color: $White;
+            transition: 0.2s;
+            margin-bottom: 1.5rem;
+        
+
+            &:hover {
+            opacity: 0.5;
+            cursor: pointer;
+                }
+            }
+
+            p {
+                color: $Gray-600;
+                font-weight: 300;
+                position: relative;
+                right: 36%;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 835px) {
+    footer {
+        flex-direction: column;
+
+        div.block1 {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        div.block2 {
+            div.invite-copyright {
+                text-align: center;
+
+                p {
+                    position: static;
+                }
+            }
+        }
+    }
+}

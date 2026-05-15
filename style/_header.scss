@@ -1,0 +1,132 @@
+@use 'variables' as *;
+
+header { /* header layout*/
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: $White;
+    
+    
+    nav { 
+        
+        ul {/* navbar disposition */
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            gap: 3rem;
+
+            li {
+                list-style: none;
+                
+
+                a {
+                    text-decoration: none;
+                    color: $Gray-600;
+                    padding-bottom: 1.55rem;
+                    transition: 0.2s;
+                    font-weight: 300;
+                    
+
+                    &:hover {
+                        color: $Blue-950;
+                        border-bottom: 5px solid $Green-500;
+                    }
+                }
+            }
+        }
+    }
+
+    button { /* invite button style */
+        border: none;
+        position: relative;
+        background: linear-gradient(45deg, $Cyan-400 0%, $Green-500 100%);
+        padding: 15px 30px;
+        border-radius: 50px;
+        color: $White;
+        transition: 0.2s;
+        
+
+        &:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+    }
+}
+
+.menu-toggle { /*hidding the hamburger menu in desktop display*/
+    display: none;
+    cursor: pointer;
+
+    .close-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 835px) { /* nav menu in mobile */
+
+    header {
+
+        position: relative;
+
+        button {
+            display: none;
+        }
+
+        .menu-toggle {
+            display: block;
+            z-index: 1000;
+        }
+
+        nav {
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            background-color: $White;
+            border-radius: 10px;
+            padding: 2rem;
+            display: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            z-index: 999;
+
+
+            ul {
+                flex-direction: column;
+                gap: 2rem;
+
+                li {
+
+                    text-align: center;
+
+                    a {
+                        color: $Blue-950;
+                        padding-bottom: 0;
+
+                        &:hover {
+                            border-bottom: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        nav.active {
+            display: block;
+        }
+
+        .menu-toggle.active {
+
+            .hamburger-icon {
+                display: none;
+            }
+
+            .close-icon {
+                display: block;
+            }
+        }
+    }
+}
+
