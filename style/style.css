@@ -1,9 +1,14 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"); /* Public Sans font */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Public Sans", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 header { /* header layout*/
@@ -106,7 +111,7 @@ header button:hover {
 }
 main {
   width: 100%;
-  max-width: 1500px;
+  max-width: 100%; /* Changer 1500px → 100% */
   overflow: hidden;
   /*hero disposition */
 }
@@ -114,12 +119,16 @@ main section.hero {
   width: 100%;
   display: flex;
   align-items: center;
+  padding-left: 4rem;
   justify-content: space-between;
   background-color: hsl(0, 0%, 98%);
   background-image: url(../images/bg-intro-desktop.svg);
   background-repeat: no-repeat;
-  padding-left: 4rem;
-  background-position: 600px -220px;
+  background-position: calc(100% + 220px) -150px; /* Ancré à droite au lieu de 600px fixe */
+  background-size: 55%;
+  overflow: visible; /* Permettre le débordement */
+  position: relative;
+  z-index: 1;
 }
 main section.hero div.description-text {
   /* styling text */
@@ -157,14 +166,19 @@ main section.hero {
 }
 main section.hero div.description-image {
   position: relative;
-  width: 70%;
+  width: 50%; /* Réduire de 70% à 50% */
   min-height: 500px;
+  max-height: 600px; /* Ajouter une hauteur max */
+  overflow: visible; /* Empêcher le débordement */
 }
 main section.hero div.description-image img {
   width: 100%;
+  max-width: 600px; /* Limiter la largeur max */
   position: absolute;
   left: 100px;
   top: -70px;
+  bottom: -100px;
+  z-index: 999;
 }
 main section.choose {
   /* choose customisation */
