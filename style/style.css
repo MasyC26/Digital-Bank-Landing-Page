@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"); /* Public Sans font */
 * {
   margin: 0;
@@ -111,7 +110,7 @@ header button:hover {
 }
 main {
   width: 100%;
-  max-width: 100%; /* Changer 1500px → 100% */
+  max-width: 100%;
   overflow: hidden;
   /*hero disposition */
 }
@@ -124,9 +123,9 @@ main section.hero {
   background-color: hsl(0, 0%, 98%);
   background-image: url(../images/bg-intro-desktop.svg);
   background-repeat: no-repeat;
-  background-position: calc(100% + 220px) -150px; /* Ancré à droite au lieu de 600px fixe */
+  background-position: calc(100% + 220px) -150px;
   background-size: 55%;
-  overflow: visible; /* Permettre le débordement */
+  overflow: visible;
   position: relative;
   z-index: 1;
 }
@@ -166,14 +165,14 @@ main section.hero {
 }
 main section.hero div.description-image {
   position: relative;
-  width: 50%; /* Réduire de 70% à 50% */
+  width: 50%;
   min-height: 500px;
-  max-height: 600px; /* Ajouter une hauteur max */
-  overflow: visible; /* Empêcher le débordement */
+  max-height: 600px;
+  overflow: visible;
 }
 main section.hero div.description-image img {
   width: 100%;
-  max-width: 600px; /* Limiter la largeur max */
+  max-width: 600px;
   position: absolute;
   left: 100px;
   top: -70px;
